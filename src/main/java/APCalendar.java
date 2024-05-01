@@ -56,20 +56,6 @@ public class APCalendar
    */
   public static int dayOfWeek(int month, int day, int year)
   {
-    if(dayOfYear(month, day, year) == 0){
-      return "Sunday";
-    } else if(dayOfYear(month, day, year) == 1){
-      return "Monday";
-    } else if(dayOfYear(month, day, year) == 2){
-      return "Tuesday";
-    } else if(dayOfYear(month, day, year) == 3){
-      return "Wednesday";
-    } else if(dayOfYear(month, day, year) == 4){
-      return "Thursday";
-    } else if(dayOfYear(month, day, year) == 5){
-      return "Friday";
-    } else{
-      return "Saturday";
-    }
+    return (firstDayOfYear(year) + (dayOfYear(month, day, year)-1))%7;
   }
 }
